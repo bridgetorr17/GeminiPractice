@@ -5,8 +5,10 @@ const trip = [ 'Valdosta', 'Blue Ridge Parkway', 'DC', 'Philly', 'Conneticut' ];
 async function main(){
     const response = await ai.models.generateContent({
         model: "gemini-2.0-flash",
-        contents: `Add one location somewhere along the route in this trip: ${trip}. Return the full trip, with the original plus the added location in the correct order.
-        Include the reason why this would be a good addition in the 'reason' property. You should only include the reason for your addition, not the already exisiting locations.`,
+        contents: `Add one location somewhere along the route in this trip: ${trip}. 
+        Return the full trip, with the original plus the added location in the correct order.
+        Include the reason why this would be a good addition in the 'reason' property. 
+        You should only include the reason for your addition, not the already exisiting locations.`,
         config: {
             responseMimeType: "application/json",
             responseSchema: {
